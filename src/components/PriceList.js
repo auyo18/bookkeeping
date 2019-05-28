@@ -37,7 +37,7 @@ const PriceList = ({items, onModifyItem, onDeleteItem}) => (
           </Col>
           <Col className="gutter-row" span={4}>
             <div className="gutter-box">
-              <span>{item.data}</span>
+              <span>{item.date}</span>
             </div>
           </Col>
           <Col className="gutter-row" span={3}>
