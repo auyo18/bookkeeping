@@ -1,6 +1,7 @@
 import React from 'react'
 import PriceList from './components/PriceList'
 import ViewTab from './components/ViewTab'
+import MonthPicker from './components/MonthPicker'
 import {LIST_VIEW} from "./utils"
 
 const items = [
@@ -34,7 +35,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ViewTab activeTab={LIST_VIEW}/>
+        <MonthPicker year="2019" month="5"/>
+        <ViewTab activeTab={LIST_VIEW} onTabChange={view => {
+          console.log(view)
+        }}/>
         <PriceList items={items} onModifyItem={item => {
           console.log(item.id)
         }} onDeleteItem={item => {
