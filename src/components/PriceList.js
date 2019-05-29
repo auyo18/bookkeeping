@@ -1,14 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {List, Row, Col} from 'antd'
-import IosCreate from 'react-ionicons/lib/IosCreate'
-import IosTrash from 'react-ionicons/lib/IosTrash'
-
-const getIcon = name => {
-  const Icon = require(`react-ionicons/lib/${name}.js`)
-  return <Icon onClick={() => alert('Hi!')} fontSize="40px" color="#434343"
-               style={{backgroundColor: '#ffda44', borderRadius: '50%', padding: '5px'}}/>
-}
+import {List, Row, Col, Button, Icon} from 'antd'
 
 const PriceList = ({items, onModifyItem, onDeleteItem}) => (
   <List
@@ -20,9 +12,8 @@ const PriceList = ({items, onModifyItem, onDeleteItem}) => (
         <Row type="flex" justify="space-between" align="middle">
           <Col className="gutter-row" span={4}>
             <div className="gutter-box">
-              {
-                getIcon(item.category.iconName)
-              }
+              <Icon type="gitlab"
+                    style={{backgroundColor: '#ffda44', padding: '10px', fontSize: '30px', borderRadius: '50%'}}/>
             </div>
           </Col>
           <Col className="gutter-row" span={6}>
@@ -42,14 +33,12 @@ const PriceList = ({items, onModifyItem, onDeleteItem}) => (
           </Col>
           <Col className="gutter-row" span={3}>
             <div className="gutter-box">
-              <IosCreate onClick={() => onModifyItem(item)} fontSize="40px" color="white"
-                         style={{backgroundColor: '#434343', borderRadius: '50%', padding: '5px'}}/>
+              <Button type="primary" shape="circle" icon="edit" size="large" />
             </div>
           </Col>
           <Col className="gutter-row" span={3}>
             <div className="gutter-box">
-              <IosTrash onClick={() => onDeleteItem(item)} fontSize="40px" color="white"
-                        style={{backgroundColor: '#f5222d', borderRadius: '50%', padding: '5px'}}/>
+              <Button type="danger" shape="circle" icon="delete" size="large" />
             </div>
           </Col>
         </Row>
