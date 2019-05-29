@@ -26,6 +26,9 @@ class MonthPicker extends Component {
         allowClear={false}
         defaultValue={[year, month]}
         options={options}
+        onChange={value => {
+          this.props.changeMonth(value)
+        }}
       />
     )
   }

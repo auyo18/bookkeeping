@@ -33,12 +33,16 @@ const PriceList = ({items, onModifyItem, onDeleteItem}) => (
           </Col>
           <Col className="gutter-row" span={3}>
             <div className="gutter-box">
-              <Button type="primary" shape="circle" icon="edit" size="large" />
+              <Button type="primary" shape="circle" icon="edit" size="large" onClick={() => {
+                onModifyItem(item.id)
+              }}/>
             </div>
           </Col>
           <Col className="gutter-row" span={3}>
             <div className="gutter-box">
-              <Button type="danger" shape="circle" icon="delete" size="large" />
+              <Button type="danger" shape="circle" icon="delete" size="large" onClick={() => {
+                onDeleteItem(item.id)
+              }}/>
             </div>
           </Col>
         </Row>

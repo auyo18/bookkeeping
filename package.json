@@ -33,7 +33,7 @@
     "html-webpack-plugin": "4.0.0-beta.5",
     "identity-obj-proxy": "3.0.0",
     "is-wsl": "^1.1.0",
-    "jest": "24.7.1",
+    "jest": "^24.8.0",
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.7.1",
     "jest-watch-typeahead": "0.3.0",
@@ -71,7 +71,9 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.11.2"
+    "babel-plugin-import": "^1.11.2",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2"
   },
   "browserslist": {
     "production": [
@@ -91,7 +93,8 @@
       "!src/**/*.d.ts"
     ],
     "setupFiles": [
-      "react-app-polyfill/jsdom"
+      "react-app-polyfill/jsdom",
+      "./src/setupTests.js"
     ],
     "setupFilesAfterEnv": [],
     "testMatch": [
