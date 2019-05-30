@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Cascader} from 'antd'
-import {repairZero, range} from "../utils"
+import {range} from "../utils"
 
 class MonthPicker extends Component {
   constructor(props) {

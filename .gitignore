@@ -8,6 +8,7 @@ dist/
 
 # testing
 /coverage
+__tests__/__snapshots__/
 
 # production
 /bundle

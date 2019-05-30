@@ -5,44 +5,9 @@ import TotalPrice from '../components/TotalPrice'
 import PriceList from '../components/PriceList'
 import ViewTab from '../components/ViewTab'
 import {LIST_VIEW, parseToYearAndMonth, repairZero} from "../utils"
+import {items,category} from "../data"
 
 const {Header, Content} = Layout
-
-const items = [
-  {
-    "id": 1,
-    "title": "去云南旅游",
-    "price": 6600,
-    "date": "2019-03-12",
-    "category": {
-      "id": 1,
-      "name": "旅游",
-      "type": "outcome"
-    }
-  },
-  {
-    "id": 2,
-    "title": "超市购物",
-    "price": 230,
-    "date": "2019-04-26",
-    "category": {
-      "id": 2,
-      "name": "购物",
-      "type": "outcome"
-    }
-  },
-  {
-    "id": 3,
-    "title": "工资",
-    "price": 8000,
-    "date": "2019-05-15",
-    "category": {
-      "id": 32,
-      "name": "工资",
-      "type": "income"
-    }
-  }
-]
 
 const item = {
   "id": 4,
@@ -55,6 +20,14 @@ const item = {
     "type": "income"
   }
 }
+
+items.forEach(item => {
+  category.forEach(cg => {
+    if (item.cid === cg.id) {
+      item.category = cg
+    }
+  })
+})
 
 class Home extends Component {
   constructor(props) {
